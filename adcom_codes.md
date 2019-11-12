@@ -59,9 +59,7 @@ a=0;
 b=0.5;
 t=0:0.01:length(h);
 for j=1:length(t)
-    if t(j) >=a && t(j) <=b
-        y(j) = n(l);
-    elseif t(j)>b && t(j)<=l
+    if t(j)>b && t(j)<=l
         y(j) = 0;
     else
         l = l + 1;
@@ -79,9 +77,7 @@ axis([0 length(h) -2 2]);
 h = [1 0 0 1 1 0 1 0 1 0];
 
 for i=1:length(h)
-    if h(i) == 1
-        n(i) = 1;
-    else
+    if h(i) == 0
         n(i) = -1;
     end
 end
