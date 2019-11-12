@@ -73,7 +73,7 @@ end
 plot(t, y)
 title('Line code POLAR RZ');
 axis([0 length(h) -2 2]);
-
+```
 ## POLAR NRZ
 ```matlab
 h = [1 0 0 1 1 0 1 0 1 0];
