@@ -89,13 +89,13 @@ for j=1:length(t)
     elseif t(j)>b && t(j)<=l
         y(j) = 0;
     else
-        l = l + 1;
+        l = l+1;
         a = a+1;
-        b=b+1;
+        b = b+1;
     end
 end
 
-plot(t, y)
+plot(t,y);
 title('Line code POLAR RZ');
 axis([0 length(h) -2 2]);
 ```
