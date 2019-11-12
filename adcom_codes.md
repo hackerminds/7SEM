@@ -57,7 +57,9 @@ a=0;
 b=0.5;
 t=0:0.01:length(h);
 for j=1:length(t)
-    if t(j)>b && t(j)<=l
+    if t(j) >=a && t(j) <=b
+        y(j) = n(l);
+    elseif t(j)>b && t(j)<=l
         y(j) = 0;
     else
         l = l + 1;
