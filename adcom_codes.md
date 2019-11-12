@@ -48,7 +48,7 @@ h = [1 0 0 1 1 0 1 0 1 0];
 
 for i=1:length(h)
     if h(i) == 0
-        n(i) = -1;
+        h(i) = -1;
     end
 end
 
@@ -56,9 +56,9 @@ l=1;
 t=0:0.01:length(h);
 for j=1:length(t)
     if t(j) <= l
-        y(j) = n(l);
+        y(j) = h(l);
     else
-        y(j) = n(l);
+        y(j) = h(l);
         l = l + 1;
     end
 end
@@ -75,7 +75,7 @@ h = [1 0 0 1 1 0 1 0 1 0];
 
 for i=1:length(h)
     if h(i) == 0
-        n(i) = -1;
+        h(i) = -1;
     end
 end
 
@@ -85,7 +85,7 @@ b=0.5;
 t=0:0.01:length(h);
 for j=1:length(t)
     if t(j) >=a && t(j) <=b
-        y(j) = n(l);
+        y(j) = h(l);
     elseif t(j)>b && t(j)<=l
         y(j) = 0;
     else
