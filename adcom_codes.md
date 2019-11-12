@@ -9,7 +9,7 @@ plot(y)
 ```
 ## QPSK
 ```matlab
-BER = runQPSKSystemUnderTest(commqpsktxrx_init, true, printReceivedData);
+BER = runQPSKSystemUnderTest(commqpsktxrx_init, true, false);
 
 fprintf('Error rate = %f.\n',BER(1));
 fprintf('Number of detected errors = %d.\n',BER(2));
@@ -20,16 +20,16 @@ fprintf('Total number of compared samples = %d.\n',BER(3));
 clc
 clear all;
 close all;
-fs=20;
-fd=1;
-pd=500;
+fs = 20;
+fd = 1;
+pd = 500;
 m = 50;
-x=randint(pd,1,m);
-a=length(x);
-delay=3;
-r=0.01;
-rcv=rcosflt(x,fd,fs,'fir/normal',r,delay);
-n=fs/fd;
+x = randint(pd,1,m);
+a = length(x);
+delay = 3;
+r = 0.01;
+rcv = rcosflt(x,fd,fs,'fir/normal',r,delay);
+n = fs/fd;
 eyediagram(rcv,n)
 ```
 
@@ -37,11 +37,38 @@ eyediagram(rcv,n)
 
 ## DPSK
 ```matlab
-M = 4; % Use DQPSK in this example, so M is 4.
+M = 4; 
 x = randi([0 M-1],500,1); % Random data
-y = dpskmod(x,M,pi/8); % Modulate using a nonzero initial phase.
-plot(y) % Plot all points, using lines to connect them.
+y = dpskmod(x,M,pi/8); 
+plot(y) 
 ```
+## POLAR NRZ
+```matlab
+h = [1 0 0 1 1 0 1 0 1 0];
+
+for i=1:length(h)
+    if h(i) == 0
+        n(i) = -1;
+    end
+end
+
+l=1;
+t=0:0.01:length(h);
+for j=1:length(t)
+    if t(j) <= l
+        y(j) = n(l);
+    else
+        y(j) = n(l);
+        l = l + 1;
+    end
+end
+
+plot(t, y)
+title('Line code POLAR NRZ');
+axis([0 length(h) -2 2]);
+```
+
+
 ## POLAR RZ LINE CODING
 ```matlab
 h = [1 0 0 1 1 0 1 0 1 0];
@@ -72,30 +99,6 @@ plot(t, y)
 title('Line code POLAR RZ');
 axis([0 length(h) -2 2]);
 ```
-## POLAR NRZ
-```matlab
-h = [1 0 0 1 1 0 1 0 1 0];
 
-for i=1:length(h)
-    if h(i) == 0
-        n(i) = -1;
-    end
-end
-
-l=1;
-t=0:0.01:length(h);
-for j=1:length(t)
-    if t(j) <= l
-        y(j) = n(l);
-    else
-        y(j) = n(l);
-        l = l + 1;
-    end
-end
-
-plot(t, y)
-title('Line code POLAR NRZ');
-axis([0 length(h) -2 2]);
-```
 
 
