@@ -47,9 +47,7 @@ plot(y) % Plot all points, using lines to connect them.
 h = [1 0 0 1 1 0 1 0 1 0];
 
 for i=1:length(h)
-    if h(i) == 1
-        n(i) = 1;
-    else
+    if h(i) == 0
         n(i) = -1;
     end
 end
