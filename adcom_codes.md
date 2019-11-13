@@ -36,15 +36,12 @@ disp(BER(3))
 ```
 ## EYE DIAGRAM
 ```matlab
-clc
-clear all;
-close all;
 fs = 20;
 fd = 1;
-pd = 500;
-m = 50;
-x = randint(pd,1,m);
-x = randi([-2 2],m,1);
+pd = 2;
+m = 200;
+x = randi([-pd pd],m,1);
+%help("randi")
 a = length(x);
 delay = 3;
 r = 0.01;
@@ -52,10 +49,6 @@ rcv = rcosflt(x,fd,fs,'fir/normal',r,delay);
 n = fs/fd;
 eyediagram(rcv,n)
 ```
-
-
-
-
 ## DPSK
 ```matlab
 M = 4; 
