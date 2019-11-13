@@ -1,3 +1,11 @@
+## RAISED COSINE
+```matlab
+fs = 200;
+fd = 5;
+y = rcosine(fd,fs);
+figure(1)
+plot(y)
+```
 ## PCM
 ```matlab
  f = 2;
@@ -15,14 +23,7 @@
  ylabel('amplitude');
  legend('original signal','reconstructed signal');
 ```
-## RAISED COSINE
-```matlab
-fs = 200;
-fd = 5;
-y = rcosine(fd,fs);
-figure(1)
-plot(y)
-```
+
 ## QPSK
 ```matlab
 BER = runQPSKSystemUnderTest(commqpsktxrx_init, true, false);
