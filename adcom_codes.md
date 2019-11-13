@@ -39,11 +39,10 @@ disp(BER(3))
 fs = 20;
 fd = 1;
 pd = 2;
-m = 200;
+m = 100;
 x = randi([-pd pd],m,1); % new matlab %help("randi")
 % x = randint(pd,1,m);  %old matlab
 
-a = length(x);
 delay = 3;
 r = 0.01;
 rcv = rcosflt(x,fd,fs,'fir/normal',r,delay);
