@@ -79,7 +79,6 @@ for j=1:length(t)
     if t(j) <= l
         y(j) = h(l);
     else
-        y(j) = h(l);
         l = l + 1;
     end
 end
