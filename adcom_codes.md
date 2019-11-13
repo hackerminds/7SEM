@@ -40,8 +40,9 @@ fs = 20;
 fd = 1;
 pd = 2;
 m = 200;
-x = randi([-pd pd],m,1);
-%help("randi")
+x = randi([-pd pd],m,1); % new matlab %help("randi")
+% x = randint(pd,1,m);  %old matlab
+
 a = length(x);
 delay = 3;
 r = 0.01;
