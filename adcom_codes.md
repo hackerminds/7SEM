@@ -1,26 +1,3 @@
-
-
-
-## PCM
-```matlab
- clc;
- clear all;
- close all;
- f=2;
- fs=20*f;
- t=0:1/fs:1;
- a=2;
- x=a*sin(2*pi*f*t);
- x1=x+a;
- q_op=round(x1);
- enco=de2bi(q_op,'left-msb');
- deco=bi2de(enco,'left-msb');
- xr=deco-a;
- plot(t,x,'r-',t,xr,'k+-');
- xlabel('time');
- ylabel('amplitude');
- legend('original signal','reconstructed signal');
-```
 ## RAISED COSINE
 ```matlab
 fs=200;
@@ -32,10 +9,12 @@ plot(y)
 ## QPSK
 ```matlab
 BER = runQPSKSystemUnderTest(commqpsktxrx_init, true, false);
-
-fprintf('Error rate = %f.\n',BER(1));
-fprintf('Number of detected errors = %d.\n',BER(2));
-fprintf('Total number of compared samples = %d.\n',BER(3));
+disp('Error rate')
+disp(BER(1))
+disp('Number of detected errors');
+disp(BER(2))
+disp('Total number of compared samples')
+disp(BER(3))
 ```
 ## EYE DIAGRAM
 ```matlab
@@ -53,6 +32,26 @@ r = 0.01;
 rcv = rcosflt(x,fd,fs,'fir/normal',r,delay);
 n = fs/fd;
 eyediagram(rcv,n)
+```
+## PCM
+```matlab
+ clc;
+ clear all;
+ close all;
+ f = 2;
+ fs = f*20;
+ t = 0:1/fs:1;
+ a = 2;
+ x = a*sin(2*pi*f*t);
+ x1 = x+a;
+ quantized = round(x1);
+ encoded = de2bi(quantized,'left-msb');
+ decoded = bi2de(encoded,'left-msb');
+ reconstructed = decoded - a;
+ plot(t,x,'r-',t,reconstructed,'k+-');
+ xlabel('time');
+ ylabel('amplitude');
+ legend('original signal','reconstructed signal');
 ```
 
 
