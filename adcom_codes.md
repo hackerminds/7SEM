@@ -1,4 +1,26 @@
 
+
+
+## PCM
+```matlab
+ clc;
+ clear all;
+ close all;
+ f=2;
+ fs=20*f;
+ t=0:1/fs:1;
+ a=2;
+ x=a*sin(2*pi*f*t);
+ x1=x+a;
+ q_op=round(x1);
+ enco=de2bi(q_op,'left-msb');
+ deco=bi2de(enco,'left-msb');
+ xr=deco-a;
+ plot(t,x,'r-',t,xr,'k+-');
+ xlabel('time');
+ ylabel('amplitude');
+ legend('original signal','reconstructed signal');
+```
 ## RAISED COSINE
 ```matlab
 fs=200;
