@@ -38,9 +38,9 @@ disp(BER(3))
 ```matlab
 fs = 20;
 fd = 1;
-pd = 2;
-m = 100;
-x = randi([-pd pd],m,1); % new matlab %help("randi")
+pd = 200;
+m = 5;
+x = randi([0 m-1],pd,1); % new matlab %help("randi")
 % x = randint(pd,1,m);  %old matlab
 
 delay = 3;
