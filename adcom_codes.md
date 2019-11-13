@@ -1,8 +1,25 @@
+## PCM
+```matlab
+ f = 2;
+ fs = f*20;
+ t = 0:1/fs:1;
+ a = 2;
+ x = a*sin(2*pi*f*t);
+ x1 = x+a;
+ quantized = round(x1);
+ encoded = de2bi(quantized,'left-msb');
+ decoded = bi2de(encoded,'left-msb');
+ reconstructed = decoded - a;
+ plot(t,x,'r-',t,reconstructed,'k+-');
+ xlabel('time');
+ ylabel('amplitude');
+ legend('original signal','reconstructed signal');
+```
 ## RAISED COSINE
 ```matlab
-fs=200;
-fd=5;
-y=rcosine(fd,fs);
+fs = 200;
+fd = 5;
+y = rcosine(fd,fs);
 figure(1)
 plot(y)
 ```
@@ -33,26 +50,7 @@ rcv = rcosflt(x,fd,fs,'fir/normal',r,delay);
 n = fs/fd;
 eyediagram(rcv,n)
 ```
-## PCM
-```matlab
- clc;
- clear all;
- close all;
- f = 2;
- fs = f*20;
- t = 0:1/fs:1;
- a = 2;
- x = a*sin(2*pi*f*t);
- x1 = x+a;
- quantized = round(x1);
- encoded = de2bi(quantized,'left-msb');
- decoded = bi2de(encoded,'left-msb');
- reconstructed = decoded - a;
- plot(t,x,'r-',t,reconstructed,'k+-');
- xlabel('time');
- ylabel('amplitude');
- legend('original signal','reconstructed signal');
-```
+
 
 
 
