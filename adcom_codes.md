@@ -44,6 +44,7 @@ fd = 1;
 pd = 500;
 m = 50;
 x = randint(pd,1,m);
+x = randi([-2 2],m,1);
 a = length(x);
 delay = 3;
 r = 0.01;
