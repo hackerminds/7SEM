@@ -7,7 +7,7 @@ figure(1)
 plot(y)
 ```
 ## PCM
-```matlab
+```Matlab
  f = 2;
  fs = f*20;
  t = 0:1/fs:1;
