@@ -42,7 +42,6 @@ pd = 200;
 m = 5;
 x = randi([0 m-1],pd,1); % new matlab %help("randi")
 % x = randint(pd,1,m);  %old matlab
-
 delay = 3;
 r = 0.01;
 rcv = rcosflt(x,fd,fs,'fir/normal',r,delay);
