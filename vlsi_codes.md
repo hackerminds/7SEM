@@ -104,6 +104,7 @@ end
 endmodule
 ```
 Truth Table:
+
 | Input | Output |
 | A | B | Not1 | And2 | Or2 |
 | --- | --- | --- | --- | --- |
