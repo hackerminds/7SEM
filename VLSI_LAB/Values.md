@@ -83,13 +83,16 @@
 
  - **Spice Code**
 
-		Vdd Vdd 0 DC 5
-		*DC Analysis
-		Vin Vin 0 DC 5
-		.dc Vin 0 5 1m
-		*Transient Analysis
-		Vin Vin 0 PULSE(0 5 0 1n 1n .5m 1m)
-		.tran 2m
+		vdd vdd 0 dc 1.8
+		vss vss 0 dc -1.8
+		vinp vinp 0 dc 1.8
+		.dc vinp -1.8 1.8 0.1
+		vinp vinp 0 ac sin(0.7 0.5m 1k)
+		vinn vinn 0 dc 0.7
+		.tran 0 5m
+		vinp vinp 0 ac sin(0.7 0.5m 1k)
+		vinn vinn 0 dc 0.7
+		.ac dec 100 100 10g
 		.include C:\Electric\C5_models.txt
 # R2R Ladder
  - **PMOS Values**
@@ -105,11 +108,11 @@
 
  - **Spice Code**
 
-		Vdd Vdd 0 DC 5
-		*DC Analysis
-		Vin Vin 0 DC 5
-		.dc Vin 0 5 1m
-		*Transient Analysis
-		Vin Vin 0 PULSE(0 5 0 1n 1n .5m 1m)
-		.tran 2m
-		.include C:\Electric\C5_models.txt
+		vdd vdd 0 dc 5
+		vss vss 0 dc -5
+		v1 d0 gnd pulse(5 0 0 1n 1n 1m 2m)
+		v2 d1 gnd pulse(5 0 0 1n 1n 2m 4m)
+		v3 d2 gnd pulse(5 0 0 1n 1n 4m 8m)
+		v4 d3 gnd pulse(5 0 0 1n 1n 8m 16m)
+	    .tran 32m
+	    .include C:\Electric\C5_models.txt
