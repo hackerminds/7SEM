@@ -102,15 +102,15 @@ a = 1'b0; b = 1'b0;
 #20 a = 1'b1; b = 1'b1;
 end
 endmodule
-
+```
 Truth Table:
-Input Output
+| Input | Output |
 | A | B | Not1 | And2 | Or2 |
 | --- | --- | --- | --- | --- |
-|0 | 0 | 1 |  0 |   0 |
-|0 | 1 |   1 |  0  | 1|
-|1 |0 |  0  | 0   |1|
-|1| 1  | 0  | 1   |1|
+| 0 | 0 | 1 |  0 | 0 |
+| 0 | 1 | 1 |  0 | 1 |
+| 1 | 0 | 0 |  0 | 1 |
+| 1 | 1 | 0 |  1 | 1 |
 
 ### 4b. Universal Gates
 ```verilog
