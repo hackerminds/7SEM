@@ -318,3 +318,180 @@ clk rst t q qb
 ↑   0   0 q qb
 ↑   0   1 qb q
 ```
+
+### 5c. T Flip Flop
+```verilog
+module tff2(t, rst, clk, q,qb);
+input t,clk,rst;
+output q,qb;
+reg q,qb,temp;
+always@(posedge clk)
+begin
+if (rst==1'b1)
+temp =1'b0;
+else
+if(t==1'b1)
+temp =~temp;
+q = temp;
+qb =~temp;
+end
+endmodule
+Test bench:
+module tff;
+reg clk,rst,t;
+wire q,qb;
+tff2 tff2 (t, rst, clk, q, qb);
+VLSI Lab Manual VII sem, ECE 15ECL77
+Canara Engineering College Dept of ECE
+initial
+begin
+clk = 1'b0;
+forever #10 clk = ~clk;
+end
+initial
+begin
+t = 1'b0;rst = 1'b1;
+#20t = 1'b0; rst = 1'b0;
+#20 t = 1'b1;
+end
+endmodule
+Truth Table:
+Input Output
+clk rst t q qb
+↑ 1 X 0 1
+↑ 0 0 q qb
+↑ 0 1 qb q
+6. Parallel Adder
+module parallel_adder (ain, bin, cin, sum, cout);
+input [3:0] ain, bin;
+input cin;
+output [3:0] sum;
+output cout;
+wire c1, c2, c3;
+full_adder U1 ( ain[0], bin[0], cin, sum[0], c1);
+full_adder U2 ( ain[1], bin[1], c1, sum[1], c2);
+full_adder U3 ( ain[2], bin[2], c2, sum[2], c3);
+full_adder u4 ( ain[3], bin[3], c3, sum[3], cout);
+endmodule
+module full_adder( ain, bin, cin, sum, cout);
+input ain, bin, cin;
+output sum, cout;
+assign {cout, sum} = ain + bin + cin;
+endmodule
+
+Test bench:
+module tb_top();
+reg [3:0] ain, bin;
+reg cin;
+wire [3:0] sum;
+wire cout;
+integer i, j;
+parallel_adder U1 (ain, bin, cin, sum, cout);
+initial
+begin
+for ( i = 0; i <16; i = i+1) begin
+for( j = 0; j<16 ; j = j + 1) begin
+ain = i; cin = 1'b0;
+bin = j;
+#10;
+end
+bin = 4'b0;
+end
+end
+endmodule
+
+Truth Table:
+Input Output
+ain bin cin sum cout
+1111 1111 0 1110 1
+0001 0010 0 0011 0
+7a. 4 - Bit Binary Up Counter
+module bincount2(clk,rst, bincount);
+input clk,rst;
+output [3:0] bincount;
+reg [3:0] bincount, temp;
+always@(posedge clk)
+begin
+if(rst==1'b1)
+temp=4'b0000;
+else if(temp==4'b1111)
+temp=4'b0000;
+else
+temp=temp+1;
+bincount=temp;
+end
+endmodule
+
+Test bench:
+module bincou;
+reg clk,rst;
+wire [3:0] bincount;
+bincount2 bincount_0 (clk, rst, bincount);
+initial
+begin
+clk = 1'b0;
+forever #5 clk = ~clk;
+end
+initial
+begin
+rst = 1'b1;
+#10 rst = 1'b0;
+end
+endmodule
+
+Truth Table:
+Input Output
+clk rst bincount
+  ↑ 1 0000
+  ↑ 0 0001
+  ↑ 0 0010
+  ↑ 0 0011
+  ↑ 0 0100
+  ↑ 0 0101
+  ↑ 0 0110
+  ↑ 0 0111
+  ↑ 0 1000
+  ↑ 0 1001
+  ↑ 0 1010
+  ↑ 0 1011
+  ↑ 0 1100
+  ↑ 0 1101
+  ↑ 0 1110
+  ↑ 0 1111
+```
+### 7b. 4 - Bit Binary Down Counter
+```verilog
+module bincount2(clk,rst, bincount);
+input clk,rst;
+output [3:0] bincount;
+reg [3:0] bincount, temp;
+always@(posedge clk)
+begin
+if(rst==1'b1)
+temp=4'b0000;
+else if(temp==4'b0000)
+temp=4'b1111;
+else
+temp=temp-1;
+bincount=temp;
+end
+endmodule
+
+Test bench:
+module bincou;
+reg clk,rst;
+wire [3:0] bincount;
+bincount2 bincount_0 (clk, rst,
+bincount);
+initial
+begin
+clk = 1'b0;
+forever #5 clk = ~clk;
+end
+initial
+begin
+rst = 1'b1;
+#10 rst = 1'b0;
+end
+endmodule
+```
