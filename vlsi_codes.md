@@ -1,5 +1,5 @@
 ### Inverter
-```verilog
+``` verilog
 module inverter(a,y);
 input a;
 output y;
@@ -21,7 +21,7 @@ endmodule
 ```
 
 ### A Buffer
-```verilog
+``` verilog
 module buffer (a, en, y);
 input a, en;
 output y;
@@ -50,7 +50,7 @@ end
 endmodule
 ```
 ### transmission gate
-```verilog
+``` verilog
 module tg(a,c, y);
 input a,c;
 output y;
@@ -310,6 +310,7 @@ t = 1'b0;rst = 1'b1;
 #20 t = 1'b1;
 end
 endmodule
+
 
 Truth Table:
 Input Output
