@@ -24,16 +24,16 @@
 		.include C:\Electric\C5_models.txt
 
 # Common Drain Amplifier
- - **PMOS Values**
-
-|Width|Length  |
-|--|--|
-| 67 | 14 |
  - **NMOS Values**
 
 |Width|Length  |
 |--|--|
 | 20 | 20 |
+ - **NMOS Values**
+
+|Width|Length  |
+|--|--|
+| 67 | 14 |
 
  - **Spice Code**
 
