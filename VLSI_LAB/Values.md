@@ -140,7 +140,7 @@ NMOS
 	    .include C:\Electric\C5_models.txt
 	
 ## SPICE SYNTAX
-```spice
+```html
 Voltage source: 
 
 Vname N1 N2 Type Value
