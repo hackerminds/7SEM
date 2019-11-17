@@ -1,7 +1,7 @@
 
 # Inverter 
 ![inverter](inv.jpg)
-![layout](invl.jpg)
+![layout](invl.JPG)
 
  - **PMOS Values**
 
@@ -51,8 +51,8 @@
 		.ac dec 100 100 10G
 		.include C:\Electric\C5_models.txt
 # Common Source Amplifier
-![cs](cs.jpg)
-![cs](csl.jpg)
+![cs](cs.JPG)
+![cs](csl.JPG)
  - **PMOS Values**
 
 |Width|Length  |
@@ -78,8 +78,8 @@
 		.include C:\Electric\C5_models.txt
 # Operation Amplifier
 
- - Differential Amplifier	
-
+# - Differential Amplifier	
+![diffamp](diffamp.jpg)
 PMOS
 	 
 | Width | Length |
@@ -121,6 +121,7 @@ NMOS
 		.ac dec 100 100 10g
 		.include C:\Electric\C5_models.txt
 # R2R Ladder
+![dacop](dacop.JPG)
  - **PMOS Values**
 		
 |Width|Length  |
@@ -144,7 +145,10 @@ NMOS
 		v4 d3 gnd pulse(5 0 0 1n 1n 8m 16m)
 	    .tran 32m
 	    .include C:\Electric\C5_models.txt
-	
+# R2R without opamp
+![dac](dac.JPG)
+
+
 ## SPICE SYNTAX
 ```html
 Voltage source: 
