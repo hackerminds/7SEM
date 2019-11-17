@@ -1,5 +1,7 @@
 
 # Inverter 
+![inverter](inv.jpg)
+![layout](invl.jpg)
 
  - **PMOS Values**
 
@@ -24,6 +26,8 @@
 		.include C:\Electric\C5_models.txt
 
 # Common Drain Amplifier
+![cd](cd.jpg)
+![cd](cdl.jpg)
  - **NMOS Values**
 
 |Width|Length  |
@@ -47,6 +51,8 @@
 		.ac dec 100 100 10G
 		.include C:\Electric\C5_models.txt
 # Common Source Amplifier
+![cs](cs.jpg)
+![cs](csl.jpg)
  - **PMOS Values**
 
 |Width|Length  |
