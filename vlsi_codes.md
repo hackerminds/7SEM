@@ -19,6 +19,12 @@ a = 1'b1;
 end
 endmodule
 ```
+table:
+
+| a | y |
+| --- | --- |
+| 1 | 0 |
+|0 | 1|
 
 ### Buffer
 ``` verilog
@@ -49,6 +55,15 @@ a = 1'b1; en=1'b1;
 end
 endmodule
 ```
+table
+
+|en|a|y|
+| --- | --- | --- |
+|0|0|0|
+|0|1|1|
+|1|0|Z|
+|1|1|Z|
+
 ### transmission gate
 ``` verilog
 module tg(a,c, y);
@@ -64,6 +79,7 @@ nmos n2 (y, a, c )
 end
 endmodule
 
+
 Test bench:
 module test_tg;
 reg a,c;
@@ -77,6 +93,13 @@ a = 1'b1; c = 1'b0;
 end
 endmodule
 ```
+table:
+
+|c|a|y|
+|--|--|--|
+|0|x|Z|
+|1|0|0|
+|1|1|1|
 
 ### 4. Basic / Universal Gates
 ### 4a. Basic Gates
@@ -135,7 +158,6 @@ end
 endmodule
 ```
 Truth Table:
-Input Output
 
 | A | B | Nand2 | Nor2 |
 | --- | --- | --- | --- |
@@ -190,7 +212,6 @@ end
 endmodule
 ```
 Truth Table:
-Input Output
 
 |clk |rst| sr[1] | sr[0] | q| qb|
 | --- | --- | --- | --- | --- | --- |
@@ -214,7 +235,7 @@ else
 q=d;
 qb=~q;
 end
-endmodule
+endmodule 
 
 Test bench:
 module test_d_ff;
@@ -287,6 +308,7 @@ endmodule
 Truth Table:
 
 |clk| jk[1] |jk[0] |q |qb|
+|--|--|--|--|--|
 |↑ |0| 0 |q| qb|
 |↑ |0 |1 |0 |1|
 |↑ |1 |0 |1 |0|
