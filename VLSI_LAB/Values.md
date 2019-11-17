@@ -1,3 +1,4 @@
+
 # Inverter 
 
  - **PMOS Values**
@@ -137,3 +138,34 @@ NMOS
 		v4 d3 gnd pulse(5 0 0 1n 1n 8m 16m)
 	    .tran 32m
 	    .include C:\Electric\C5_models.txt
+	
+## SPICE SYNTAX
+```spice
+Voltage source: 
+
+Vname N1 N2 Type Value
+
+N1 is the positive terminal node
+N2 is the negative terminal node
+Type can be DC, AC or TRAN, depending on the type of analysis (see Control Statements)
+Value gives the value of the source
+The name of a voltage and current source must start with V and I, respectively.
+
+Vname N1 N2 PULSE(V1 V2 TD Tr Tf PW Period)
+V1 - initial voltage; V2 - peak voltage; TD - initial delay time; Tr - rise time; Tf - fall time; pwf - pulse-wise; and Period - period. 
+
+
+.AC DEC ND FSTART FSTOP
+in which LIN stands for a linear frequency variation, DEC and OCT for a decade and octave variation respectively. NP stands for the number of points and ND and NO for the number of frequency points per decade and octave. FSTART and FSTOP are the start and stopping frequencies in Herz 
+
+.DC SRCname START STOP STEP
+in which SRC name is the name of the source you want to vary; START and STOP are the starting and ending value, respectively; and STEP is the size of the increment.
+  
+.TRAN TSTEP TSTOP <TSTART <TMAX>> <UIC> 
+   
+TSTEP is the printing increment.
+TSTOP is the final time
+TSTART is the starting time (if omitted, TSTART is assumed to be zero)
+TMAX is the maximum step size.
+UIC stands for Use Initial Condition and instructs PSpice not to do the quiescent operating point before beginning the transient analysis. If UIC is specified, PSpice will use the initial conditions specified in the element statements (see data statement) IC = value.
+```
