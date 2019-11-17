@@ -192,7 +192,8 @@ endmodule
 Truth Table:
 Input Output
 
-|clk |rst| sr[1]| sr[0]| q| qb|
+|clk |rst| sr[1] | sr[0] | q| qb|
+| --- | --- | --- | --- | --- | --- |
 |↑| 1 |X |X |0 |1|
 |↑| 0 |0 |0 |q |qb|
 |↑| 0 |0| 1| 0 |1|
@@ -238,6 +239,7 @@ Truth Table:
 Input Output
 
 |clk| rst| d| q| qb|
+| --- | --- | --- | --- | --- |
 |↑| 1| X| 0| 1|
 |↑ |0 |0 |0 |1|
 |↑| 0| 1| 1 |0|
