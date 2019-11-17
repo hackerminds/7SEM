@@ -81,6 +81,7 @@ PMOS
 |  |  |
 
 NMOS
+
 | Width | Length |
 |--|--|
 | 541 | 3.33 |
@@ -94,6 +95,7 @@ NMOS
 |  17| 84 |
 
 NMOS
+
 | Width | Length |
 |--|--|
 | 67 | 7 |
