@@ -70,17 +70,30 @@
 		.ac DEC 100 100 10G
 		.include C:\Electric\C5_models.txt
 # Operation Amplifier
- - **PMOS Values**
 
-|Width|Length  |
+ - Differential Amplifier	
+
+PMOS
+	 
+| Width | Length |
 |--|--|
-| 10 | 2 |
- - **NMOS Values**
-
-|Width|Length  |
+| 47.5 | 3.33 |
+|  |  |
+NMOS
+| Width | Length |
 |--|--|
-| 10 | 2 |
-
+| 541 | 3.33 |
+|  |  |
+ - Inverter
+ PMOS
+ 
+| Width | Length |
+|--|--|
+|  17| 84 |
+NMOS
+| Width | Length |
+|--|--|
+| 67 | 7 |
  - **Spice Code**
 
 		vdd vdd 0 dc 1.8
@@ -96,15 +109,17 @@
 		.include C:\Electric\C5_models.txt
 # R2R Ladder
  - **PMOS Values**
+		
+|Width|Length  |
+|--|--|
+| 17 | 1 |
+| 51 | 1 |
+  **NMOS Values**
 
 |Width|Length  |
 |--|--|
-| 10 | 2 |
- - **NMOS Values**
-
-|Width|Length  |
-|--|--|
-| 10 | 2 |
+| 7 | 1 |
+| 17 | 1 |
 
  - **Spice Code**
 
