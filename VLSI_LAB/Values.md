@@ -79,17 +79,20 @@ PMOS
 |--|--|
 | 47.5 | 3.33 |
 |  |  |
+
 NMOS
 | Width | Length |
 |--|--|
 | 541 | 3.33 |
 |  |  |
  - Inverter
+ 
  PMOS
  
 | Width | Length |
 |--|--|
 |  17| 84 |
+
 NMOS
 | Width | Length |
 |--|--|
@@ -114,6 +117,7 @@ NMOS
 |--|--|
 | 17 | 1 |
 | 51 | 1 |
+
   **NMOS Values**
 
 |Width|Length  |
