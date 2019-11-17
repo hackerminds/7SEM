@@ -28,6 +28,7 @@
 # Common Drain Amplifier
 ![cd](cd.jpg)
 ![cd](cdl.jpg)
+
  - **NMOS Values**
 
 |Width|Length  |
@@ -77,9 +78,12 @@
 		.ac DEC 100 100 10G
 		.include C:\Electric\C5_models.txt
 # Operation Amplifier
+![opamp](opamp.JPG)
 
 # - Differential Amplifier	
 ![diffamp](diffamp.jpg)
+
+
 PMOS
 	 
 | Width | Length |
