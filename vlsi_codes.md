@@ -20,7 +20,7 @@ end
 endmodule
 ```
 
-### A Buffer
+### Buffer
 ``` verilog
 module buffer (a, en, y);
 input a, en;
@@ -105,11 +105,12 @@ endmodule
 
 Truth Table:
 Input Output
-A B Not1 And2 Or2
-0 0   1   0   0
-0 1   1   0   1
-1 0   0   0   1
-1 1   0   1   1
+| A | B | Not1 | And2 | Or2 |
+| --- | --- | --- | --- | --- |
+|0 | 0 | 1 |  0 |   0 |
+|0 | 1 |   1 |  0  | 1|
+|1 |0 |  0  | 0   |1|
+|1| 1  | 0  | 1   |1|
 
 ### 4b. Universal Gates
 ```verilog
