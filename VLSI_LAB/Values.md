@@ -97,6 +97,7 @@ NMOS
 | Width | Length |
 |--|--|
 | 67 | 7 |
+
  - **Spice Code**
 
 		vdd vdd 0 dc 1.8
@@ -117,7 +118,6 @@ NMOS
 |--|--|
 | 17 | 1 |
 | 51 | 1 |
-
   **NMOS Values**
 
 |Width|Length  |
