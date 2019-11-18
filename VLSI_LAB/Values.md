@@ -185,3 +185,6 @@ TSTART is the starting time (if omitted, TSTART is assumed to be zero)
 TMAX is the maximum step size.
 UIC stands for Use Initial Condition and instructs PSpice not to do the quiescent operating point before beginning the transient analysis. If UIC is specified, PSpice will use the initial conditions specified in the element statements (see data statement) IC = value.
 ```
+
+ - for more on spice code:
+ 	http://www.ni.com/tutorial/5420/en/
