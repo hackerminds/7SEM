@@ -1,3 +1,10 @@
+## VECTOR ERRORS (FIX)
+```
+clc
+clear all
+close all
+```
+
 ## RAISED COSINE
 ```matlab
 fs = 200;
