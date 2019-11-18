@@ -166,9 +166,9 @@ Truth Table:
 |1| 0| 1| 0|
 |1| 1| 0| 0|
 
-5. Flip Flop – RS, D, JK, MS, T
+# 5. Flip Flop – RS, D, JK, MS, T
 
-5a. RS Flip Flop
+# 5a. RS Flip Flop
 ```verilog
 module srff(sr,rst,clk, q, qb);
 input [1:0]sr;
@@ -221,7 +221,7 @@ Truth Table:
 |↑| 0 |1 |0 |1| 0|
 |↑| 0 |1 |1| Z| Z|
 
-5b. D Flip Flop
+# 5b. D Flip Flop
 ```verilog
 module dff1(d,clk,rst, q,qb);
 input d,clk,rst;
@@ -265,7 +265,7 @@ Input Output
 |↑ |0 |0 |0 |1|
 |↑| 0| 1| 1 |0|
 
-5c. JK Flip Flop
+# 5c. JK Flip Flop
 ```verilog
 module jkff1(jk, clk,q,qb);
 input [1:0] jk;
@@ -314,52 +314,6 @@ Truth Table:
 |↑ |1 |0 |1 |0|
 |↑ |1| 1| qb |q|
 
-5c. T Flip Flop
-```verilog
-module tff2(t, rst, clk, q,qb);
-input t,clk,rst;
-output q,qb;
-reg q,qb,temp;
-always@(posedge clk)
-begin
-if (rst==1'b1)
-temp =1'b0;
-else
-if(t==1'b1)
-temp =~temp;
-q = temp;
-qb =~temp;
-end
-endmodule
-Test bench:
-module tff;
-reg clk,rst,t;
-wire q,qb;
-tff2 tff2 (t, rst, clk, q, qb);
-initial
-begin
-clk = 1'b0;
-forever #10 clk = ~clk;
-end
-initial
-begin
-t = 1'b0;rst = 1'b1;
-#20t = 1'b0; rst = 1'b0;
-#20 t = 1'b1;
-end
-endmodule
-```
-
-Truth Table:
-Input Output
-
-|clk| rst| t| q |qb|
-| --- | --- | --- | --- | --- |
-|↑  | 1 |  X |0| 1|
-|↑  | 0  | 0| q |qb|
-|↑ |  0  | 1 |qb| q|
-
-
 ### 5c. T Flip Flop
 ```verilog
 module tff2(t, rst, clk, q,qb);
@@ -404,7 +358,7 @@ Truth Table:
 |↑| 0| 0 |q |qb|
 |↑ |0 |1 |qb |q|
 
-6. Parallel Adder
+# 6. Parallel Adder
 ```verilog
 module parallel_adder (ain, bin, cin, sum, cout);
 input [3:0] ain, bin;
@@ -451,7 +405,7 @@ Truth Table:
 |1111 |1111| 0 |1110| 1|
 |0001| 0010| 0| 0011 |0|
 
-7a. 4 - Bit Binary Up Counter
+# 7a. 4 - Bit Binary Up Counter
 ```verilog
 module bincount2(clk,rst, bincount);
 input clk,rst;
@@ -491,22 +445,22 @@ Input Output
 
 |clk |rst| bincount|
 | --- | --- | --- |
-  ↑ 1 0000
-  ↑ 0 0001
-  ↑ 0 0010
-  ↑ 0 0011
-  ↑ 0 0100
-  ↑ 0 0101
-  ↑ 0 0110
-  ↑ 0 0111
-  ↑ 0 1000
-  ↑ 0 1001
-  ↑ 0 1010
-  ↑ 0 1011
-  ↑ 0 1100
-  ↑ 0 1101
-  ↑ 0 1110
-  ↑ 0 1111
+ | ↑ |1| 0000
+ | ↑ | 0 |0001
+  | ↑ | 0 | 0010
+  | ↑ | 0 | 0011
+  | ↑ | 0 | 0100
+  | ↑ | 0 | 0101
+  | ↑ | 0 | 0110
+   | ↑ | 0 | 0111
+   | ↑ | 0 | 1000
+  | ↑ | 0 |1001
+ | ↑ | 0 | 1010
+  | ↑ | 0 | 1011
+  | ↑ | 0 |1100
+ | ↑ | 0 |1101
+  | ↑ | 0 | 1110
+   | ↑ | 0 |1111
 | --- | --- | --- |
 
 ### 7b. 4 - Bit Binary Down Counter
