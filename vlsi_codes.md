@@ -308,7 +308,7 @@ endmodule
 Truth Table:
 
 |clk| jk[1] |jk[0] |q |qb|
-|--|--|--|--|--|
+|---|---|---|---|---|
 |↑ |0| 0 |q| qb|
 |↑ |0 |1 |0 |1|
 |↑ |1 |0 |1 |0|
@@ -354,6 +354,7 @@ Truth Table:
 Input Output
 
 |clk| rst| t| q |qb|
+| --- | --- | --- | --- | --- |
 |↑  | 1 |  X |0| 1|
 |↑  | 0  | 0| q |qb|
 |↑ |  0  | 1 |qb| q|
@@ -398,6 +399,7 @@ endmodule
 Truth Table:
 
 |clk|rst|t |q |qb|
+| --- | --- | --- | --- | --- |
 |↑| 1| X |0 |1|
 |↑| 0| 0 |q |qb|
 |↑ |0 |1 |qb |q|
@@ -445,6 +447,7 @@ endmodule
 Truth Table:
 
 |ain |bin| cin |sum |cout|
+| --- | --- | --- | --- | --- |
 |1111 |1111| 0 |1110| 1|
 |0001| 0010| 0| 0011 |0|
 
@@ -487,6 +490,7 @@ Truth Table:
 Input Output
 
 |clk |rst| bincount|
+| --- | --- | --- |
   ↑ 1 0000
   ↑ 0 0001
   ↑ 0 0010
@@ -503,7 +507,8 @@ Input Output
   ↑ 0 1101
   ↑ 0 1110
   ↑ 0 1111
-  
+| --- | --- | --- |
+
 ### 7b. 4 - Bit Binary Down Counter
 ```verilog
 module bincount2(clk,rst, bincount);
