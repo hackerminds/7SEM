@@ -1,5 +1,6 @@
 ## VECTOR ERRORS (FIX)
 ```
+%Add these 3 line in all codes
 clc
 clear all
 close all
