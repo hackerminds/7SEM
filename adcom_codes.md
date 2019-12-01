@@ -64,7 +64,8 @@ plot(y)
 ```
 ## POLAR NRZ
 ```matlab
-h = [1 0 0 1 1 0 1 0 1 0];
+%h = [1 0 0 1 1 0 1 0 1 0];
+h = input('Enter the input: '); %Enter the input inside square bracket eg. [1 0 1 0 0 1]
 
 for i=1:length(h)
     if h(i) == 0
@@ -91,7 +92,8 @@ axis([0 length(h) -2 2]);
 
 ## POLAR RZ LINE CODING
 ```matlab
-h = [1 0 0 1 1 0 1 0 1 0];
+%h = [1 0 0 1 1 0 1 0 1 0];
+h = input('Enter the input: '); %Enter the input inside square bracket eg. [1 0 1 0 0 1]
 
 for i=1:length(h)
     if h(i) == 0
