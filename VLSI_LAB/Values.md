@@ -1,7 +1,8 @@
 # Verilog codes
 https://github.com/hackerminds/7SEM/blob/master/vlsi_codes.md
 
-# 
+# Design Files
+https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/hackerminds/7SEM/blob/master/VLSI_LAB/Analog_Design.jelib
 
 # Inverter 
 ![inverter](inv.jpg)
@@ -87,33 +88,30 @@ https://github.com/hackerminds/7SEM/blob/master/vlsi_codes.md
 # - Differential Amplifier	
 ![diffamp](diffamp.jpg)
 
-
-PMOS
+### PMOS
 	 
 | Width | Length |
 |--|--|
 | 47.5 | 3.33 |
-|  |  |
 
-NMOS
+### NMOS
 
 | Width | Length |
 |--|--|
 | 541 | 3.33 |
-|  |  |
- - Inverter
- 
- PMOS
+
+### - CS-amp at vout
+### PMOS
  
 | Width | Length |
 |--|--|
-|  17| 84 |
+|  14 | 84 |
 
-NMOS
+### NMOS
 
 | Width | Length |
 |--|--|
-| 67 | 7 |
+| 67 | 4 |
 
  - **Spice Code**
 
@@ -128,8 +126,25 @@ NMOS
 		vinn vinn 0 dc 0.7
 		.ac dec 100 100 10g
 		.include C:\Electric\C5_models.txt
+
 # R2R Ladder
 ![dacop](dacop.JPG)
+
+
+ - **Spice Code**
+
+		vdd vdd 0 dc 5
+		vss vss 0 dc -5
+		v1 d0 gnd pulse(5 0 0 1n 1n 1m 2m)
+		v2 d1 gnd pulse(5 0 0 1n 1n 2m 4m)
+		v3 d2 gnd pulse(5 0 0 1n 1n 4m 8m)
+		v4 d3 gnd pulse(5 0 0 1n 1n 8m 16m)
+	    .tran 32m
+	    .include C:\Electric\C5_models.txt
+
+# R2R without opamp
+![dac](dac.JPG)
+
  - **PMOS Values**
 		
 |Width|Length  |
@@ -143,22 +158,8 @@ NMOS
 | 7 | 1 |
 | 17 | 1 |
 
- - **Spice Code**
-
-		vdd vdd 0 dc 5
-		vss vss 0 dc -5
-		v1 d0 gnd pulse(5 0 0 1n 1n 1m 2m)
-		v2 d1 gnd pulse(5 0 0 1n 1n 2m 4m)
-		v3 d2 gnd pulse(5 0 0 1n 1n 4m 8m)
-		v4 d3 gnd pulse(5 0 0 1n 1n 8m 16m)
-	    .tran 32m
-	    .include C:\Electric\C5_models.txt
-# R2R without opamp
-![dac](dac.JPG)
-
-
 ## SPICE SYNTAX
-```html
+```boo
 Voltage source: 
 
 Vname N1 N2 Type Value
