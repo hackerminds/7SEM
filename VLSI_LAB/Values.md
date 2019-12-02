@@ -1,5 +1,7 @@
-## verilog codes
+# Verilog codes
 https://github.com/hackerminds/7SEM/blob/master/vlsi_codes.md
+
+# 
 
 # Inverter 
 ![inverter](inv.jpg)
