@@ -151,9 +151,10 @@ https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/hackerminds/
 |--|--|
 | 17 | 1 |
 | 51 | 1 |
-  **NMOS Values**
 
-|Width|Length  |
+**NMOS Values**
+
+|Width|Length|
 |--|--|
 | 7 | 1 |
 | 17 | 1 |
