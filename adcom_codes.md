@@ -5,6 +5,34 @@ clc
 clear all
 close all
 ```
+## MANCHESTER LINE CODE
+```matlab
+h = [1 0 0 1 1 0 1 0 1 0];
+y= [];
+for i=1:length(h)
+    if h(i) == 0
+        h(i) = -1;
+    end
+end
+
+l=1;
+a=0;
+b=0.5;
+t=0:0.01:length(h);
+for j=1:length(t)
+    if t(j) >=a && t(j) <=b
+        y(j) = h(l);
+    elseif t(j)>=b && t(j)<=l
+        y(j) = -1*h(l) %invert output after t crosses 0.5
+    else
+        y(j) = y(j-1); % remove spikes assign a previous value
+        l = l+1;
+        a = a+1;
+        b = b+1;
+    end
+end
+```
+
 ## HALF SINE (NEW)
 ```matlab
 f = 2;
