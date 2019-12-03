@@ -5,6 +5,19 @@ clc
 clear all
 close all
 ```
+## HALF SINE (NEW)
+```matlab
+f = 2;
+fs = f*20;
+t = 0:1/fs:1;
+y = sin(2*pi*f*t);
+for i=1:length(t)
+    if y(i) < 0
+        y(i) = 0;
+    end
+end
+plot(t,y);
+```
 
 ## RAISED COSINE
 ```matlab
