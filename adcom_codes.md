@@ -8,12 +8,8 @@ close all
 ## MANCHESTER LINE CODE(NEW)
 ```matlab
 h = [1 0 0 1 1 0 1 0 1 0];
-y= [];
-for i=1:length(h)
-    if h(i) == 0
-        h(i) = -1;
-    end
-end
+
+h(h<0) = -1;
 
 l=1;
 a=0;
@@ -105,11 +101,7 @@ plot(y)
 %h = [1 0 0 1 1 0 1 0 1 0];
 h = input('Enter the input: '); %Enter the input inside square bracket eg. [1 0 1 0 0 1]
 
-for i=1:length(h)
-    if h(i) == 0
-        h(i) = -1;
-    end
-end
+h(h<0) = -1;
 
 l=1;
 t=0:0.01:length(h);
@@ -133,11 +125,7 @@ axis([0 length(h) -2 2]);
 %h = [1 0 0 1 1 0 1 0 1 0];
 h = input('Enter the input: '); %Enter the input inside square bracket eg. [1 0 1 0 0 1]
 
-for i=1:length(h)
-    if h(i) == 0
-        h(i) = -1;
-    end
-end
+h(h<0) = -1;
 
 l=1;
 a=0;
