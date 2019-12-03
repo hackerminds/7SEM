@@ -9,7 +9,7 @@ close all
 ```matlab
 h = [1 0 0 1 1 0 1 0 1 0];
 
-h(h<0) = -1;
+h(h<=0) = -1; % change all 0's to -1
 
 l=1;
 a=0;
@@ -101,7 +101,7 @@ plot(y)
 %h = [1 0 0 1 1 0 1 0 1 0];
 h = input('Enter the input: '); %Enter the input inside square bracket eg. [1 0 1 0 0 1]
 
-h(h<0) = -1;
+h(h<=0) = -1; % change all 0's to -1
 
 l=1;
 t=0:0.01:length(h);
@@ -125,7 +125,7 @@ axis([0 length(h) -2 2]);
 %h = [1 0 0 1 1 0 1 0 1 0];
 h = input('Enter the input: '); %Enter the input inside square bracket eg. [1 0 1 0 0 1]
 
-h(h<0) = -1;
+h(h<=0) = -1; % change all 0's to -1
 
 l=1;
 a=0;
