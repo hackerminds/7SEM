@@ -1,5 +1,9 @@
-## VECTOR ERRORS (FIX)
+## ERRORS (FIX)
 ```
+% sequence y is undefined
+
+y =[ ]; %put at the begining of code
+
 %Add these 3 line in all codes
 clc
 clear all
