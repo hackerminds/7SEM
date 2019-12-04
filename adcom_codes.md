@@ -9,6 +9,43 @@ clear all
 close all
 y =[ ];
 ```
+## BIPOLAR RZ (NEW)
+```matlab
+
+h = input('Enter Binary Sequence: ');
+
+x = 1;
+for i=1:length(h)
+    if h(i) == 1 && x
+        h(i) = 1;
+        x = ~x;
+    elseif h(i) == 1
+        h(i) = -1;
+        x = ~x;
+    end
+end
+
+k=1;
+a = 0;
+b = 0.5;
+t=0:0.01:length(h);
+for j=1:length(t)
+    if t(j) >= a && t(j) <= b
+        y(j) = h(k);
+    elseif t(j) >b && t(j) <= k
+        y(j) = 0;
+    else
+        k = k + 1;
+        a = a + 1;
+        b = b + 1;
+    end
+end
+
+plot(t, y)
+title('Bipolar RZ');
+axis([0 length(h) -2 2]);
+```
+
 ## MANCHESTER LINE CODE(NEW)
 ```matlab
 h = [1 0 0 1 1 0 1 0 1 0];
