@@ -1,10 +1,7 @@
 ## ERRORS (FIX)
 ```
 % sequence y is undefined
-
-
-
-%Add these 3 line in all codes
+%Add these 4 line in all codes
 clc
 clear all
 close all
