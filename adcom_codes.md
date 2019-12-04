@@ -9,12 +9,12 @@ clear all
 close all
 y =[ ];
 ```
-## BIPOLAR RZ (NEW)
+## BIPOLAR RZ(AMI) (NEW)
 ```matlab
 h = [1 1 1 1 0];
 
 x = 1;
-for i=1:length(h)% change ones to alternate plus minus
+for i=1:length(h) % change ones to alternate plus minus
     if h(i) == 1
        h(i) = x;
        x = -x;
