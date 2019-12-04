@@ -27,6 +27,9 @@ for j=1:length(t)
         b = b+1;
     end
 end
+plot(t,y);
+title('Manchester line code');
+axis([0 length(h) -2 2]);
 ```
 
 ## HALF SINE (NEW)
