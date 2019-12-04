@@ -1,6 +1,7 @@
 ## ERRORS (FIX)
 ```
 % sequence y is undefined
+y = [];
 % comment y(j) = y(j-1) if error
 %Add these 4 line in all codes
 clc
