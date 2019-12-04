@@ -11,15 +11,15 @@ y =[ ];
 ```
 ## BIPOLAR RZ (NEW)
 ```matlab
-
-clc
-clear all
-close all
 h = [1 1 1 1 0];
-%h = input('Enter Binary Sequence: ');
 
 x = 1;
-h(h==1) = -1*x;% change ones to alternate plus minus
+for i=1:length(h)% change ones to alternate plus minus
+    if h(i) == 1
+       h(i) = x;
+       x = -x;
+    end
+end
 
 k=1;
 a = 0;
