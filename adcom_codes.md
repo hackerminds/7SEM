@@ -12,18 +12,14 @@ y =[ ];
 ## BIPOLAR RZ (NEW)
 ```matlab
 
-h = input('Enter Binary Sequence: ');
+clc
+clear all
+close all
+h = [1 1 1 1 0];
+%h = input('Enter Binary Sequence: ');
 
 x = 1;
-for i=1:length(h)
-    if h(i) == 1 && x
-        h(i) = 1;
-        x = ~x;
-    elseif h(i) == 1
-        h(i) = -1;
-        x = ~x;
-    end
-end
+h(h==1) = -1*x;% change ones to alternate plus minus
 
 k=1;
 a = 0;
