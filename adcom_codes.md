@@ -9,7 +9,7 @@ clear all
 close all
 y =[ ];
 ```
-## BIPOLAR RZ(AMI) (NEW)
+## dont study BIPOLAR RZ(AMI) (NEW)
 ```matlab
 h = [1 1 1 1 0];
 
@@ -42,7 +42,7 @@ title('Bipolar RZ');
 axis([0 length(h) -2 2]);
 ```
 
-## MANCHESTER LINE CODE(NEW)
+## dont study MANCHESTER LINE CODE(NEW)
 ```matlab
 h = [1 0 0 1 1 0 1 0 1 0];
 
